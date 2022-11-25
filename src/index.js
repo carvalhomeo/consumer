@@ -31,10 +31,6 @@ const kafka = new Kafka({
 
 const consumer = kafka.consumer({ groupId: "coordinates" });
 
-socket.configure(function () {
-  socket.set("match origin protocol", true);
-});
-
 socket.on("connect", (socket) => {
   console.log("user connected: ", socket.id);
 });
