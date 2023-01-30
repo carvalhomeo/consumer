@@ -41,7 +41,7 @@ server.listen(process.env.PORT, () => {
 
 const run = async () => {
   await consumer.connect();
-  await consumer.subscribe({ topic: "coordinates", fromBeginning: true });
+  await consumer.subscribe({ topic: "location", fromBeginning: false });
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
       console.log("received: ", message?.value?.toString());
